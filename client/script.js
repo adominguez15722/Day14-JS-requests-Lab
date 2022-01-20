@@ -121,6 +121,8 @@ const repeatMyParam = () => {
         .get('http://localhost:3000/repeat/' + 'param!')
         .then(res => {
             console.log(res.data)
+            let repeatText = document.querySelector('#repeat-text');
+            repeatText.textContent = res.data
         })
         .catch(err => console.log(err))
 };
