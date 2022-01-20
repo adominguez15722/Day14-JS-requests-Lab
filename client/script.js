@@ -76,6 +76,7 @@ const sayHello = () => {
 
 // CODE HERE
 
+sayHelloButton.addEventListener('click', sayHello)
 
 // PROBLEM 5 
 /*
