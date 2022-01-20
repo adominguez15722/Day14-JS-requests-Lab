@@ -164,7 +164,7 @@ let sendAQuery = document.querySelector('#query-button')
 
 function getQuery() {
     axios
-        .get('http://localhost:3000/query-test/?whatis=name')
+        .get('http://localhost:3000/query-test/?whatis=name&tell-me=your-name')
         .then(res => {
             console.log(res.data)
         })
@@ -190,9 +190,9 @@ sendAQuery.addEventListener('click', getQuery)
 /*
     In the function that you wrote for Problem 8, change the URL to test a couple different scenarios. 
 
-    1: Send no queries on the URL -- what happened? 
+    1: Send no queries on the URL -- what happened? You get the console to say 'You sent no query!'
 
-    2: Send more than 1 query on the URL -- what happened? 
+    2: Send more than 1 query on the URL -- what happened? You get the console to say 'You sent more than 1 query!'
 */
 
 // Edit code in Problem 8
