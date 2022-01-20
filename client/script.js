@@ -89,6 +89,8 @@ sayHelloButton.addEventListener('click', sayHello)
     Handle the promise that's returned with a .then, which you should pass a callback function to. Inside the callback function, console.log the response's data (in the intermediate instructions we'll come back to this function and add HTML).
 */ 
 
+
+
 const ohMy = () => {
     axios
         .get('http://localhost:3000/animals')
@@ -112,9 +114,18 @@ document.getElementById('animals-button').addEventListener('click', ohMy)
     We'll be updating this function in the next problem.
 */
 
+let repeatMyParamButton = document.querySelector('#repeat-button')
+
 const repeatMyParam = () => {
-    //YOUR CODE HERE
-}
+    axios
+        .get('http://localhost:3000/repeat/' + 'param!')
+        .then(res => {
+            console.log(res.data)
+        })
+        .catch(err => console.log(err))
+};
+
+repeatMyParamButton.addEventListener('click', repeatMyParam)
 
 // PROBLEM 7
 /*
