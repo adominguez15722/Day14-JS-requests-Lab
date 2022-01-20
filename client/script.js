@@ -151,7 +151,18 @@ repeatMyParamButton.addEventListener('click', repeatMyParam)
 
 // CODE HERE
 
+let sendAQuery = document.querySelector('#query-button')
 
+function getQuery() {
+    axios
+        .get('http://localhost:3000/query-test/?whatis=name')
+        .then(res => {
+            console.log(res.data)
+        })
+        .catch(err => console.log(err));
+}
+
+sendAQuery.addEventListener('click', getQuery)
 
 ////////////////
 //INTERMEDIATE//
