@@ -94,7 +94,15 @@ sayHelloButton.addEventListener('click', sayHello)
 const ohMy = () => {
     axios
         .get('http://localhost:3000/animals')
-        .then(res => {console.log(res.data)})
+        .then(res => {
+            for(let i = 0; i < res.data.length; i++){
+                const body = document.querySelector('body')
+                const newPara = document.createElement('p')
+
+                newPara.textContent = res.data[i];
+                body.appendChild(newPara)
+            }
+        })
         .catch(err => console.log(err))
 }
 
@@ -118,10 +126,11 @@ let repeatMyParamButton = document.querySelector('#repeat-button')
 
 const repeatMyParam = () => {
     axios
-        .get('http://localhost:3000/repeat/' + 'param!')
+        .get('http://localhost:3000/repeat/' + 'Anthony!')
         .then(res => {
             console.log(res.data)
             let repeatText = document.querySelector('#repeat-text');
+            repeatText.style.display = "block";
             repeatText.textContent = res.data
         })
         .catch(err => console.log(err))
