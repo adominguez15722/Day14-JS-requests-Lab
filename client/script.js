@@ -23,6 +23,23 @@ let sayHelloButton = document.querySelector('#say-hello-button')
 
 // CODE HERE
 
+// function colorChange(evt)  {
+//     axios
+//         .get('http://localhost:3000' + 'sayHelloButton')
+//         .then(res => {
+//             res.evt.sayHelloButton.style.backgroundColor = "black"
+//             res.evt.sayHelloButton.style.color = "white"
+//         })
+//         .catch(err => console.log(err))
+    
+    
+    
+// }
+
+sayHelloButton.addEventListener('mouseover', () => {
+    sayHelloButton.style.backgroundColor = "black"
+    sayHelloButton.style.color = "white"
+});
 
 // PROBLEM 3
 /*
